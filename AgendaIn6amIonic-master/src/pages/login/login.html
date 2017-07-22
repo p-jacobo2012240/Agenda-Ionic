@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Nick</ion-label>
+            <ion-input type="text"
+            name="nick"
+            [(ngModel)]="usuario.nick"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Contrasena</ion-label>
+            <ion-input type="password"
+            name="contrasena"
+            [(ngModel)]="usuario.contrasena"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button full color="dark"
+        (click)="iniciarSesion()">
+        Iniciar Sesion
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

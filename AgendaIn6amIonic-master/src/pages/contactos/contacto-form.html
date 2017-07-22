@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>{{ titulo }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text"
+            name="nombre"
+            [(ngModel)]="contacto.nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Apellido</ion-label>
+            <ion-input type="text"
+            name="apellido"
+            [(ngModel)]="contacto.apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Direccion</ion-label>
+            <ion-input type="text"
+            name="direccion"
+            [(ngModel)]="contacto.direccion"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Telefono</ion-label>
+            <ion-input type="text"
+            name="telefono"
+            [(ngModel)]="contacto.telefono"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Categoria</ion-label>
+            <ion-input type="text"
+            name="idCategoria"
+            [(ngModel)]="contacto.idCategoria"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button full color="primary"
+        (click)="guardar()">
+        Guardar
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
