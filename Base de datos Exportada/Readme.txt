@@ -1,1 +1,0 @@
-importar la base de datos con XAMPP u otro gestor.
