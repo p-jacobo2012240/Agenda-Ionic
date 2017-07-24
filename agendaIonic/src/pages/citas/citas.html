@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title><h1 style="color: #fff;">Cita</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="body" padding>
+    <ion-card *ngFor="let cita of _cita.citaList"
+    (click)="changeForm(cita.idCita)">
+    <ion-card-header>
+      <h1 style="color: rgb(64,198,168);">
+        Cita con: {{ cita.nombre}}
+      </h1>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <h2 style="font-size: 1.2em;">Fecha: {{ cita.fechaFormat }} ({{ (cita.dias > 0)? "En  "+cita.dias : "Hace "+(cita.dias* -1)}} dias)</h2>
+        <h2 style="font-size: 1.2em;" >Lugar: {{ cita.lugar }}</h2>
+      
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="sweet"
+    (click)="changeForm('nuevo')">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

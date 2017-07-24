@@ -1,0 +1,26 @@
+<div class="modal fade" id="agregarUSMO" tabindex="-1" role="dialog" aria-labelledby="agregarUSMO" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+        <button type="button" class="close" id="closeAGUSMO" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="AGuser" ng-submit="gestionUS(1)">
+      <div class="modal-body">
+        <input type="text" name="Nombre" class="form-control" style="margin: 3px 10px" ng-model="nombreUS" placeholder="Nombre" required/>
+        <input type="text" name="Apellido" class="form-control" style="margin: 3px 10px" ng-model="apellidoUS" placeholder="Apellido" required/>
+        <input type="tel" name="Telefono" class="form-control" style="margin: 3px 10px" ng-model="telefonoUS" placeholder="Telefono" required/>
+        <input type="email" name="Correo" class="form-control" style="margin: 3px 10px" ng-model="correoUS" placeholder="Correo" required/>
+        <input type="file" id="urlIMGUS" class="form-control" name="urlIMG" style="margin: 3px 10px" accept="image/png,image/jpg,image/jpeg" placeholder="Imagen" />
+        <select class="form-control" style="margin: 3px 10px" ng-model="categoriaUS" ng-options="cate as cate.nombre for cate in categoryList"></select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Añadir Contacto</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

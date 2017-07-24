@@ -1,0 +1,23 @@
+<div ng-controller="editUser" class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="agregarCAMO" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Mi Perfil</h5>
+        <button type="button" class="close" id="closeeditUS" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form ng-submit="editarUS()">
+      <div class="modal-body">
+        <h3 class="text-center" >ID: {{udiUS}}</h3>
+        <input type="text" class="form-control" style="margin: 3px 10px" ng-model="nickUS" placeholder="Usuario" required/>
+        <input type="text" class="form-control" style="margin: 3px 10px" ng-model="passUS" placeholder="Contraseña" required/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Modificar Usuario</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

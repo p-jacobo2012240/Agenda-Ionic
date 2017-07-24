@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>{{ encabezado }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Lugar</ion-label>
+            <ion-input type="text"
+            name="lugar"
+            [(ngModel)]="citaTemp.lugar"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Fecha</ion-label>
+            <ion-input type="date"
+            name="fecha"
+            [(ngModel)]="citaTemp.fechaFormat"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Hora</ion-label>
+            <ion-input type="time"
+            name="hora"
+            [(ngModel)]="citaTemp.horaFormat"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Contacto</ion-label>
+            <ion-select name="idContacto" [(ngModel)]="citaTemp.idContacto">
+              <ion-option *ngFor="let contacto of _contacto.contactoList" value="{{contacto.idContacto}}">{{ contacto.nombre+" "+contacto.apellido}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Descripcion</ion-label>
+            <ion-textarea name="descripcion" [(ngModel)]="citaTemp.descripcion" ></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button (click)="guardar()" *ngIf="parametro == 'nuevo'" color="secundary">Agregar</button>
+      <button ion-button (click)="editar()" *ngIf="parametro != 'nuevo'" color="warning">Modificar</button>
+      <button *ngIf="parametro != 'nuevo'" (click)="eliminar()" ion-button color="danger">Eliminar</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

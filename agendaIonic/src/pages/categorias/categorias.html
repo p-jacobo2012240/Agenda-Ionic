@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title>Categoria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="body" >
+
+  <ion-card padding *ngFor="let categoria of _categoria.categoriaList"  (click)="changeForm(categoria.idCategoria)">
+    <h1 style="color: rgb(64,198,168);">{{categoria.nombre}} {{categoria.idCategoria}}</h1>
+    <small>Click aca para mas detalles</small>
+  </ion-card>
+
+  <ion-fab rigth bottom>
+    <button ion-fab color="primary" 
+      (click)="changeForm('nuevo')">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

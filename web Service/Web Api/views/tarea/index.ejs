@@ -1,0 +1,29 @@
+<% include ../Shared/layout %>
+    <h2 class="text-center"><%=saludo %></h2>
+    <div class="row" ng-controller="tareasController">
+        <div class="col-lg-6" >
+            <div class="form-inline">
+                <input type="text" class="form-control" style="margin: 1px 5px" placeholder="Buscar..." ng-model="searchTA" />
+                <button type="button" class="btn btn-sm btn-outline-success" data-target="#agregarTAMO" data-toggle="modal">Agregar</button>
+            </div>
+            <table class="table table-hover table-bordered">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>#</th><th>Nombre</th><th>Descripcion</th><th>Categoria</th><th>Prioridad</th><th>Fecha</th><th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody >
+                     <tr ng-repeat="tarea in tareasList | filter: searchTA ">
+                        <td>{{tarea.idTarea}}</td><td>{{tarea.nombre}}</td><td>{{tarea.descripcion}}</td><td>{{tarea.nombreCategoria}}</td><td>{{tarea.nombrePrioridad}}</td><td>{{tarea.fecha}}</td>
+                        
+                        <td><div class="btn-group"><button type="button" ng-click="setTA(tarea)" data-target="#editarTAMO" data-toggle="modal" class="btn btn-sm btn-outline-warning">Modificar</button><button type="button" ng-click="setTA(tarea)" data-target="#eliminarTAMO" data-toggle="modal" class="btn btn-sm btn-outline-danger">Borrar</button></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       <% include agregarMO %>
+       <% include editarMO %>
+       <% include eliminarMO %>
+       <% include ../contacto/editarMO %>
+    </div>
+<% include ../Shared/footer %>

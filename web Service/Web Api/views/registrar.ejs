@@ -1,0 +1,28 @@
+<% include Shared/layout %>
+<div class="row" ng-controller="registrarUS">
+  <div class="col-md-4 offset-md-3" style="margin-top: 15%;">
+    <h2 class="text-center">Registrarte c:</h2>
+    <form ng-submit="registrar()">
+      <div class="form-group">
+        <input ng-model="nickUS" type="text" name="nick" id="nick" class="form-control"
+        required placeholder="Ingrese su nick">
+      </div>
+
+      <div class="form-group">
+        <input type="password" ng-model="passUS" name="contrasena" id="contrasena" class="form-control"
+        required placeholder="Ingrese la contraseña">
+      </div>
+
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="submit" class="btn btn-outline-success">Registrar</button>
+        </div> 
+      </div>
+       <div class="alert alert-danger" ng-show="Mensaje">
+          <h3 class="alert-heading">¡Vaya!, parece que tenemos problemas</h3>
+          <p>{{Mensaje}}</p>
+        </div>
+    </form>
+  </div>
+</div>
+<% include Shared/footer %>

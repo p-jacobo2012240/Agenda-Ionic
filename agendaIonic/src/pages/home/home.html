@@ -1,0 +1,24 @@
+<ion-header color="sweet">
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Bienvenido {{usuario}}</h2>
+
+  <ion-content>
+
+    <ion-card *ngFor="let tarea of _tarae.tareaList">
+      <ion-card-header>
+         <h1 style="color: rgb(64,198,168);">{{tarea.nombre}}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        <h3>Fecha: {{ tarea.fechaFormat }}</h3>
+        <h3>Prioridad: {{ tarea.nombrePrioridad}}</h3>
+      
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</ion-content>

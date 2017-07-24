@@ -1,0 +1,26 @@
+<div class="modal fade" id="editarTAMO" tabindex="-1" role="dialog" aria-labelledby="agregarCAMO" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Editar</h5>
+        <button type="button" class="close" id="closeAGUSMO" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form ng-submit="gestionTA(2)">
+      <div class="modal-body">
+        <h3 class="text-center" >ID: {{tareaID}}</h3>
+        <input type="text" class="form-control" style="margin: 3px 10px" ng-model="nombreTA" placeholder="Nombre" required/>
+        <input type="date" class="form-control" style="margin: 3px 10px" ng-model="fechaTA" placeholder="Fecha" required/>
+        <select class="form-control" style="margin: 3px 10px" ng-model="categoriaTA" ng-options="cate as cate.nombre for cate in categoriaList"></select>
+        <select class="form-control" style="margin: 3px 10px" ng-model="prioridadTA" ng-options="pri as pri.nombre for pri in prioridadList"></select>
+        <textarea type="text" class="form-control" style="margin: 3px 10px" ng-model="descripcionTA" placeholder="Descripcion" ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Modificar Tarea</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
