@@ -1,0 +1,8 @@
+-Si da Error al cerrar sesion en el tab de contacto,
+ir a el tab de tareas y cerrar sesion desde hay.
+
+-Para Editar o eliminar Tarea y cita dejar presionado
+Click sobre el elemento y en cita sobre el cuadro de foto.
+
+Gracias.
+Feliz Trde.

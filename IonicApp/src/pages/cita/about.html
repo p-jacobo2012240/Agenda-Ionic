@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Citas
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentConfirm()">
+        <ion-icon ios="ios-log-out" md="ios-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let cita of citas">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img (click)="mostarContacto(cita)"
+        >
+    </ion-avatar>
+    <h2>{{ cita.nombre }}</h2>
+    <p>{{ cita.fecha | date: 'longDate' }}</p>
+  </ion-item>
+  <div (press)="cargar(cita)">
+    <!--img src="https://ionicframework.com/dist/preview-app/www/assets/img/advance-card-bttf.png"-->
+    <ion-card-content>
+      <p>{{ cita.descripcion }}</p>
+    </ion-card-content>
+  </div>
+  </ion-card>
+
+   <ion-fab right bottom>
+    <button ion-fab (click)="cargar('nuevo')" color="primary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

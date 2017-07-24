@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contactos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentConfirm()">
+        <ion-icon ios="ios-log-out" md="ios-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+ <ion-list>
+  <ion-item *ngFor = "let contacto of contactos" detail-push>
+    <ion-avatar item-start>
+      <!--img src="https://www.mycustomer.com/sites/all/modules/custom/sm_pp_user_profile/img/default-user.png"-->
+    </ion-avatar>
+    <h2>{{ contacto.nombre }}</h2>
+    <p>{{ contacto.telefono }}</p>
+    <button ion-button outline (click)="evento(contacto)" item-end>Detalles</button>
+  </ion-item>
+</ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="cargarFormulario('nuevo')" color="secundary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

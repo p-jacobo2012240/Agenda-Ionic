@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ titulo }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Descripcion</ion-label>
+            <ion-input type="text"
+            name="descripcion"
+            [(ngModel)]="cita.descripcion"></ion-input>
+          </ion-item>
+          <ion-item-divider>
+                <ion-label floating>Fecha</ion-label>
+                <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="cita.fecha"></ion-datetime>
+          </ion-item-divider>
+            <ion-item-divider>
+                <ion-label floating>Lugar</ion-label>
+                <ion-input type="text"
+            name="descripcion"
+            [(ngModel)]="cita.lugar"></ion-input>
+            </ion-item-divider>
+
+            <ion-list>
+            <ion-item>
+                <ion-label floating>Contacto</ion-label>
+                <ion-select [(ngModel)]="cita.id">
+                <ion-option *ngFor="let contacto of contactos" [value]="contacto.idContacto">
+                    {{ contacto.nombre }}
+                </ion-option>
+                </ion-select>
+            </ion-item>
+            </ion-list>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button *ngIf="!status" ion-button block outline color="secundary"
+        (click)="agregar()">
+        Guardar
+      </button>
+        <button *ngIf="status" (click)="modificar()" ion-button block outline color="primary">Guardar</button>
+        <button *ngIf="status" (click)="eliminar()" ion-button block outline color="danger">Eliminar</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

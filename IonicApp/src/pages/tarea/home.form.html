@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ titulo }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Titulo</ion-label>
+            <ion-input type="text"
+            name="titulo"
+            [(ngModel)]="tarea.titulo"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Descripcion</ion-label>
+            <ion-input type="text"
+            name="descripcion"
+            [(ngModel)]="tarea.descripcion"></ion-input>
+          </ion-item>
+          <ion-item-divider>
+                <ion-label floating>Entrega</ion-label>
+                <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="tarea.fin"></ion-datetime>
+          </ion-item-divider>
+          <ion-list>
+            <ion-item>
+                <ion-label floating>Estado</ion-label>
+                <ion-select [(ngModel)]="tarea.estado">
+                <ion-option value="En Proceso">Iniciada</ion-option>
+                <ion-option value="Sin Iniciar">Detenida</ion-option>
+                <ion-option value="Terminada">Finalizada</ion-option>
+            </ion-select>
+            </ion-item>
+            </ion-list>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button *ngIf="!status" ion-button block outline color="primary"
+        (click)="agregar()">
+        Guardar
+      </button>
+        <button *ngIf="status" (click)="modificar()" ion-button block outline color="primary">Guardar</button>
+        <button *ngIf="status" (click)="eliminar()" ion-button block outline color="danger">Eliminar</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registrar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text"
+            name="nombre"
+            [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Apellido</ion-label>
+            <ion-input type="text"
+            name="apellido"
+            [(ngModel)]="usuario.apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Correo</ion-label>
+            <ion-input type="text"
+            name="correo"
+            [(ngModel)]="usuario.correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Nick</ion-label>
+            <ion-input type="text"
+            name="nick"
+            [(ngModel)]="usuario.nick"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password"
+            name="password"
+            [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+       <button ion-button block text-capitalize (click)="iniciarSesion()">Registrar</button>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear (click)="login()" text-capitalize>Iniciar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

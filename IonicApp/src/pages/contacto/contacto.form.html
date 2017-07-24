@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ titulo }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text"
+            name="nombre"
+            [(ngModel)]="contacto.nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Apellido</ion-label>
+            <ion-input type="text"
+            name="apellido"
+            [(ngModel)]="contacto.apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Correo</ion-label>
+            <ion-input type="text"
+            name="correo"
+            [(ngModel)]="contacto.correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Telefono</ion-label>
+            <ion-input type="text"
+            name="telefono"
+            [(ngModel)]="contacto.telefono"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button *ngIf="!estado" outline ion-button block color="primary"
+        (click)="agregar()">
+        Guardar
+      </button>
+        <button *ngIf="estado" outline (click)="modificar()" ion-button block color="primary">Guardar</button>
+        <button *ngIf="estado" outline (click)="eliminar()" ion-button block color="danger">Eliminar</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
